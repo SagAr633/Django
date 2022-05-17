@@ -1,0 +1,48 @@
+{%extends 'Base.html'%}
+
+{%block body_block%}
+<div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <table>
+                <tr>
+                    <br><th><h4><b>User Information</b></h4></th>
+                </tr>
+                <tr>
+                    <br><th>
+                    <img src="{{request.user.profile.pro_pic.url}}" class="img-fluid" alt="...">
+
+                </th>
+                </tr>
+                <tr>
+                    <td> <i>Name : </i> {{prof.user}} </td>
+                </tr>
+                <tr>
+                    <td> <i>Marital Status : </i> {{prof.marital_status}}</td>
+                </tr>
+                <tr>
+                    <td> <i>D.O.B : </i> {{prof.date_of_birth}} </td>
+                </tr>
+                <tr>
+                    <td> <i>Country : </i> {{prof.country}} </td>
+                </tr>
+                <tr>
+                <td> <i>State : </i> {{prof.state}} </td>
+                </tr>
+                <tr>
+                    <td> <i>Phone : </i> {{prof.phone}} </td>
+                </tr>
+            </table>
+            <br>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <a href="{%url 'pro_update' prof.id%}" class="btn btn-outline-warning">Edit</a>
+                </div>
+                <div class="col-4"></div>
+            </div>
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+{%endblock%}

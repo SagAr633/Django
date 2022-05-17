@@ -1,0 +1,44 @@
+body{
+    
+    /* background-image: url(pexels-gabriel-peter-696644.jpg); */
+    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+    /* height: 3000px; */
+    
+    }
+
+.bdy{
+    background-color: black;
+    color: white;
+}
+
+
+
+.btn-grad {background-image: linear-gradient(to right, #000000 0%, #434343  51%, #9b1e1e  100%)}
+.btn-grad {
+   margin: 5px;
+   padding: 5px 15px;
+   text-align: center;
+   /* text-transform: uppercase; */
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   box-shadow: 0 0 5px rgb(126, 126, 126);
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+.hot:hover{
+   background-position: right center; /* change the direction of the change here */
+   color: rgb(168, 36, 36);
+   text-decoration: none;
+}
+

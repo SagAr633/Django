@@ -1,0 +1,28 @@
+{%extends 'Base2.html'%}
+
+{%block body_block%}
+<div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <h1>SignUp</h1>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                {%csrf_token%}
+                {{form.as_p}}
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <input type="submit" value="SignUp" class="btn btn-outline-success">
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+{%endblock%}

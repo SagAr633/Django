@@ -1,0 +1,47 @@
+{%extends 'Base.html'%}
+
+{%block body_block%}
+    <div class="bdy row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6 mt-3">
+                    <u><h1>Your Posts</h1></u> <br>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            {%if request.user.blogss%}
+            <img class="img-fluid" src="{{request.user.Blogs.blog_image.url}}" alt="">
+            {%endif%}
+            {%for blog in u_blogs %}
+            {%if blog.topic == 'Politics' %}
+                <a href="{%url 'topic_politics' %}"><h4><b><u>{{blog.topic}}</u></b></h4></a>
+            {%elif blog.topic == 'Entertainment'%}
+                <a href="{%url 'topic_entertainment' %}"><h4><b><u>{{blog.topic}}</u></b></h4></a>
+            {%elif blog.topic == 'News'%}
+                <a href="{%url 'topic_news' %}" ><h4><b><u>{{blog.topic}}</u></b></h4></a>
+            {%elif blog.topic == 'Life'%}
+                <a href="{%url 'topic_sports' %}" ><h4><b><u>{{blog.topic}}</u></b></h4></a>
+            {%else%}
+                <a href="{%url 'topic_tech'%"><h4><b><u>{{blog.topic}}</u></b></h4></a>
+            {%endif%}
+
+                <h4><b>{{blog.blog_title}}</b></h4>
+                <img class="img-fluid" src="{{blog.blog_image.url}}" alt=""><br>
+                <i><b>Posted by : </b></i> {{blog.user}} <br>
+                <i><b>Posted on : </b></i> {{blog.date}} <br><br>
+                {{blog.content|safe}}
+
+
+
+                <a href="{%url 'edit_blog' blog.id%}" class="btn btn-outline-warning">Edit Blog</a>
+                <a href="{%url 'delete' blog.id%}" class="btn btn-outline-danger">Delete Blog</a> <br>
+            <hr>
+            {%endfor%}
+
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+{%endblock%}

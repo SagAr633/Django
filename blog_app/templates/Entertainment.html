@@ -1,0 +1,22 @@
+{%extends 'Base.html'%}
+
+{%block body_block%}
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        {%for poli in n_topic%}
+        {%if poli.topic == 'Entertainment'%}
+
+        <h3><b>{{poli.blog_title}}</b></h3>
+        <img class="img-fluid" src="{{poli.blog_image.url}}" alt=""><br>
+        <i><b>Posted by : </b></i> {{poli.user}} <br>
+        <i><b>Posted on : </b></i> {{poli.date}} <br><br>
+        {{poli.content|safe}}
+        <hr>
+        <br>
+        {%endif%}
+        {%endfor%}
+    </div>
+    <div class="col-2"></div>
+</div>
+{%endblock%}
